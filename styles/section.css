@@ -22,7 +22,7 @@ header{
             align-items: center;
         }
 
-        .menu{
+        & .menu{
             position: relative;
             justify-content: center;
             .flex{
