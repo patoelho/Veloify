@@ -24,7 +24,6 @@ header{
 
         & .menu{
             position: relative;
-            overflow: hidden;
             justify-content: center;
             .flex{
                 gap: .5rem;
