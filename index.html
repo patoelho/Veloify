@@ -44,18 +44,25 @@
                     <a title="Clique para ver nossa central de ajuda" class="flex" href="#">Ajuda</a>
                 </div>
 
-                <div class="desktop-only tablet-only">
-                    <a class="flex" href="#">
-                        Outras ferramentas
-                        <img src="assets/icons/seta.svg" alt="">
-                    </a>
-                </div>
-
-                <div class="mobile-only">
-                    <a class="flex" href="#">
+                <div class="menu grid">
+                    <a onclick="toggleMenu()" class="flex" href="#">
                         Menu
                         <img src="assets/icons/ico-menu.svg" alt="">
                     </a>
+                    <div id="menu" class="flex">
+
+                        <a class="close" onclick="toggleMenu()">
+                            <img src="assets/icons/close.svg" alt="">
+                        </a>
+
+                        <a title="Clique para ver o home" class="flex" href="#hero">Home</a>
+
+                        <a title="Clique para gerar arquivo zip" class="flex" href="#">Gerar ZIP</a>
+
+                        <a title="Clique para gerar arquivo pdf" class="flex" href="#">Gerar PDF</a>
+
+                        <a title="Clique para ver nossa central de ajuda" class="flex" href="#">Ajuda</a>
+                    </div>
                 </div>
             <nav>
         </header>
@@ -165,6 +172,8 @@
                 <li>Conversor de Arquivos</li>
             </ul>
         </footer>
+
+        <script src="js/menu.js"></script>
     </body>
 
 </html>

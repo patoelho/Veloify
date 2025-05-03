@@ -22,13 +22,63 @@ header{
             align-items: center;
         }
 
-        .mobile-only{
+        .menu{
+            position: relative;
+            justify-content: center;
             .flex{
                 gap: .5rem;
             }
         }
+
+        #menu{
+            --bg-menu: var(--background-header-footer);
+
+            flex-direction: column;
+
+            position: absolute;
+
+            top: 0;
+            right: -400%;
+            z-index: 10;
+            opacity: 0;
+
+            background-color: var(--bg-menu);
+            box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.25);
+            gap: .75rem;
+            width: 15rem;
+            padding: 1.5rem 1.5rem 1rem 2rem;
+            align-items: end;
+            border-radius: 1.5rem .5rem .5rem 1.5rem;
+
+            transition: right 0.3s ease, opacity 0.3s ease;
+
+            & a{
+                margin-right: 4rem;
+            }
+
+            & .close{
+                & img{
+                    width: 1rem;
+                    height: auto;
+                }
+            }
+        }
+        & #menu.active{
+            right: -4rem;
+            opacity: 1;
+        }
     }
 }
+/* @keyframes menu-animation{
+    0%, 50%{
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+} */
 
 /* Tablets */
 @media (width >= 48em){
@@ -49,13 +99,24 @@ header{
             padding: .2rem;
         }
 
-        & .tablet-only{
+        & .menu{
             .flex{
                 gap: .5rem;
                 & img{
-                    width: .75rem;
+                   max-width: 100%;
                     height: auto;
                 }
+            }
+        }
+    }
+
+}
+/* Desktop */
+@media (width >= 80em){
+    header{
+        & nav{
+            & div:nth-child(5){
+                display: none;
             }
         }
         & a{
@@ -84,17 +145,6 @@ header{
             transform: scale(0);
 
             transition: transform 300ms ease-in;
-        }
-    }
-
-}
-/* Desktop */
-@media (width >= 80em){
-    header{
-        & nav{
-            & div:nth-child(5){
-                display: none;
-            }
         }
     }
 }
