@@ -25,46 +25,61 @@
 
     <body>
         <header class="container flex">
+
+            <nav class="flex gap-1">
+                
+                <a onclick="toggleMenu()" class="flex menu" href="#">
+                    <strong>Menu</strong>
+                    <div class="img"></div>
+                </a>
+                <div id="menu" class="flex">
+
+                    <a class="close" onclick="toggleMenu()">
+                        <img src="assets/icons/close.svg" alt="">
+                    </a>
+
+                    
+                    <a title="Clique para ver o home" class="flex" href="#hero">Home</a>
+
+                    <div class="separetor grid">
+                        <h3>serviços</h3>
+                        <a title="Clique para gerar arquivo zip" class="flex" href="#">Gerar ZIP</a>
+                        
+                        <a title="Clique para gerar arquivo pdf" class="flex" href="#">Gerar PDF</a>
+
+                        <a title="Clique para criar seu currículo" class="flex" href="#">Crie seu currículo</a>
+                        <a title="Clique para criar seu currículo" class="flex" href="#">veja outros serviços</a>
+                    </div>
+
+                    
+                    <div class="separetor grid">
+                        <h3>Ajuda</h3>
+                        <a title="Clique para ver nossa central de ajuda" class="flex" href="#">central de atendimento</a>
+                    </div>
+
+                    <div class="separetor grid">
+                        <h3>Tema</h3>
+
+                        <div class="tema flex">
+                            <span id="lightDark" class="nomeTema">Claro</span>
+                            <label class="switch">
+
+                                <input type="checkbox"  id="tema-toggle" onchange="trocarTema()" class="toggletema">
+
+                                <span class="circulo"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            </nav>
+
+
             <div class="logo flex">
                 <img title="logo da Veloify" src="assets/image/logo.png" alt="logo da Veloify">
                 <strong>Veloify</strong>
             </div>
-
-            <nav class="flex gap-1">
-                <div class="desktop-only">
-                    <a title="Clique para ver o home" class="flex" href="#hero">Home</a>
-                </div>
-                <div class="desktop-only">
-                    <a title="Clique para gerar arquivo zip" class="flex" href="#">Gerar ZIP</a>
-                </div>
-                <div class="desktop-only">
-                    <a title="Clique para gerar arquivo pdf" class="flex" href="#">Gerar PDF</a>
-                </div>
-                <div class="desktop-only">
-                    <a title="Clique para ver nossa central de ajuda" class="flex" href="#">Ajuda</a>
-                </div>
-
-                <div class="menu">
-                    <a onclick="toggleMenu()" class="flex" href="#">
-                        Menu
-                        <img src="assets/icons/ico-menu.svg" alt="">
-                    </a>
-                    <div id="menu" class="flex">
-
-                        <a class="close" onclick="toggleMenu()">
-                            <img src="assets/icons/close.svg" alt="">
-                        </a>
-
-                        <a title="Clique para ver o home" class="flex" href="#hero">Home</a>
-
-                        <a title="Clique para gerar arquivo zip" class="flex" href="#">Gerar ZIP</a>
-
-                        <a title="Clique para gerar arquivo pdf" class="flex" href="#">Gerar PDF</a>
-
-                        <a title="Clique para ver nossa central de ajuda" class="flex" href="#">Ajuda</a>
-                    </div>
-                </div>
-            <nav>
+            
         </header>
 
         <section id="hero" class="container flex gap-2">
@@ -174,6 +189,7 @@
         </footer>
 
         <script src="js/menu.js"></script>
+        <script src="js/temaMenu.js"></script>
     </body>
 
 </html>

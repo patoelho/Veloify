@@ -1,10 +1,137 @@
 /* ========== Header ========== */
-header{
+header.container{
     justify-content: space-between;
     align-items: center;
     margin-block: 1rem;
 
+    position: relative;
+
+    & nav.flex{
+        font: 700 1rem/1.2 var(--font-poppins);
+
+        & a strong{
+            font: 700 1rem/1.2 var(--font-poppins);
+        }
+
+        & .img{
+            background: url(../assets/icons/ico-menu.svg)no-repeat center center;
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+
+        & .menu{
+            gap: .75rem;
+
+            .flex{
+                gap: .5rem;
+            }
+        }
+        & #menu{
+
+            position: absolute;
+            top: -1.5rem;
+            left: -100%;
+            opacity: 0;
+
+            height: 102vh;
+
+            padding-block: 1.5rem;
+            padding-inline: 1.5rem 4rem;
+            width: fit-content;
+            background-color: var(--background-header-footer);
+
+            transition: left .2s, opacity .2s;
+            
+            flex-direction: column;
+
+            z-index: 2;
+
+            & > a:nth-child(2){
+                margin-block: .8rem 1.5rem;
+            }
+            & .separetor{
+                gap: .5rem;
+
+                & h3 + a{
+                    margin-top: .5rem;
+                }
+            }
+
+            & .separetor + .separetor{
+                margin-top: 2rem;
+            }
+
+            & a{
+                font: 500 1rem/1.5 var(--font-poppins);
+            }
+
+            & .close{
+                width: 1rem;
+                height: auto;
+                cursor: pointer;
+            }
+
+            & .tema{
+                --border-tema: #ffffff;
+                --bg-tema: var(--border-tema);
+
+                align-items: center;
+                gap: .75rem;
+                justify-content: space-between;
+                width: 8.5rem;
+
+                & .nomeTema{
+                    font: 500 1rem/1.5 var(--font-poppins);
+                }
+
+                & .switch{
+                    width: 4rem;
+                    height: 2rem;
+                    border-radius: 1.5rem;
+                    border: 2px solid var(--border-tema);
+
+                    cursor: pointer;
+
+                    transition: .4s ease-in-out;
+
+                    position: relative;
+
+                    & input {
+                        opacity: 0;
+                        width: 0;
+                        height: 0;
+                    }
+
+                    & .circulo::before{
+                        content: "";
+                        width: 1.5rem;
+                        height: 1.5rem;
+                        border-radius: 50%;
+                        background-color: var(--bg-tema);
+                        border: 1px solid var(--background-btn);
+                        cursor: pointer;
+
+                        position: absolute;
+                        top: 2px;
+                        left: 2px;
+
+                        transition: .4s ease-in-out;
+                    }
+
+                    & input:checked + .circulo::before{
+                        transform: translateX(2rem);
+                    }
+                }
+            }
+        }
+        & #menu.active{
+            left: -2rem;
+            opacity: 1;
+        }
+    }
+
     & .logo{
+        justify-content: center;
         align-items: center;
         gap: .375rem;
         & img{
@@ -15,76 +142,28 @@ header{
             font: 900 1.25rem/1.5 var(--font-poppins);
         }
     }
-
-    & nav{
-        & div{
-            font: 700 1rem/1.2 var(--font-poppins);
-            align-items: center;
-        }
-
-        & .menu{
-            position: relative;
-            justify-content: center;
-            .flex{
-                gap: .5rem;
-            }
-        }
-
-        #menu{
-            --bg-menu: var(--background-header-footer);
-
-            flex-direction: column;
-
-            position: absolute;
-
-            top: 0;
-            right: -400%;
-            z-index: 10;
-            opacity: 0;
-
-            background-color: var(--bg-menu);
-            box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.25);
-            gap: .75rem;
-            width: 15rem;
-            padding: 1.5rem 1.5rem 1rem 2rem;
-            align-items: end;
-            border-radius: 1.5rem .5rem .5rem 1.5rem;
-
-            transition: right 0.3s ease, opacity 0.3s ease;
-
-            & a{
-                margin-right: 4rem;
-            }
-
-            & .close{
-                & img{
-                    width: 1rem;
-                    height: auto;
-                }
-            }
-        }
-        & #menu.active{
-            right: -4rem;
-            opacity: 1;
-        }
-    }
 }
-/* @keyframes menu-animation{
-    0%, 50%{
-        opacity: 0;
-        transform: translateX(100%);
-    }
-    100%{
-        opacity: 1;
-        transform: translateX(0);
-    }
-} */
 
 /* Tablets */
 @media (width >= 48em){
     header{
         margin-block: 1.5rem;
+        
+        & .menu{
+            .flex{
+                gap: .5rem;
+                & img{
+                   max-width: 100%;
+                    height: auto;
+                }
+            }
+        }
+        & nav.flex{
 
+            & #menu{
+                width: 20%;
+            }
+        }
         & .logo{
             gap: .5rem;
             & img{
@@ -99,26 +178,13 @@ header{
             padding: .2rem;
         }
 
-        & .menu{
-            .flex{
-                gap: .5rem;
-                & img{
-                   max-width: 100%;
-                    height: auto;
-                }
-            }
-        }
+        
     }
 
 }
 /* Desktop */
 @media (width >= 80em){
     header{
-        & nav{
-            & div:nth-child(5){
-                display: none;
-            }
-        }
         & a{
             position: relative;
             width: fit-content;

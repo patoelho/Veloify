@@ -43,6 +43,7 @@
 }
 
 body{
+    background-color: var(--background-color);
     color: var(--text-color-primary);
     overflow-x: hidden;
 }
@@ -91,7 +92,6 @@ a{
 
 .card{
     background-color: var(--background-cards);
-    box-shadow: 2px 5px 15px 3px var(--btn-hover-shadow);
     padding: 1.5rem;
     border-radius: 1.5rem;
 
