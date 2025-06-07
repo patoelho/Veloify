@@ -13,7 +13,7 @@
 
 @media (width >= 48em){
     .container{
-        --max-width: 48em;
+        --max-width: 100%;
     }
 
     .mobile-only{
@@ -31,7 +31,7 @@
 
 @media (width >= 80em){
     .container{
-        --max-width: 80em;
+        --max-width: 100%;
     }
     
     .tablet-only{
