@@ -1,15 +1,21 @@
-.feedback{
+form{
     display: none;
+    background-color: rgba(0, 0, 0, 0.61);
+    height: 150vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+}
+.feedback{
     --body-color: var(--text-color-secondary);
+
+    background-color: var(--body-color);
+    margin-inline: auto;
 
     position: absolute;
     top: 10%;
     left: 50%;
     transform: translate(-50%);
-
-
-    background-color: var(--body-color);
-    margin-inline: auto;
 
     width: 20rem;
     padding: 1.25rem 1rem;
@@ -102,6 +108,50 @@
         color: var(--text-color-secondary);
     }
 }
+
+#feedback-success{
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%);
+    text-align: center;
+
+    width: 90%;
+    
+    background-color: var(--background-success);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    animation: message-sucess 3s ease-in forwards;
+}
+
+@keyframes message-sucess{
+    5%{
+        opacity: 0.1;
+    }
+    25%{
+        opacity: 0.6;
+    }
+    35%{
+        opacity: 0.7;
+    }
+
+    40%{
+        opacity: 0.8;
+    }
+    50%{
+        opacity: 0.9;
+    }
+    
+    51%, 59%{
+        opacity: 1;
+    }
+    60%, 100%{
+        top: 20%;
+        opacity: 1;
+    }
+}
+
 
 @media (width >= 48em){
     .feedback{
